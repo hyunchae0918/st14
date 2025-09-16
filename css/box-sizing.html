@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box-sizing</title>
+  <style>
+    *{margin:0; padding:0;}
+    /* 요소(내용)의 넓이는 부모로부터 온다. */
+    .container{
+      width:710px;
+      margin:50px;
+      background-color: #ccc;
+      padding:20px;
+    }
+    .box{
+      margin:20px;
+      border:10px dashed #f00;
+      padding:10px;
+      width:500px;
+      background-color: #fff;
+    }
+    .box1{box-sizing: content-box;}
+    .box2{box-sizing: border-box;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus rem non iusto sint! Fugit quis incidunt corporis minima, inventore modi odio, recusandae atque consequatur odit earum sunt tenetur amet culpa.</div>
+    <div class="box box2">Atque, ratione accusamus alias, reprehenderit deleniti rerum tenetur nihil cupiditate aliquam provident minus molestiae expedita, accusantium ea error odit sed nesciunt vitae! A beatae doloribus eum ipsam, minus molestias pariatur?</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인라인 레벨과 블럭 레벨</title>
+  <style>
+    *{margin:0; padding:0;}
+    .container{
+      /* 부모의 컨텐트 영역의 80%를 써라. 정렬은 항상 부모에게 */
+      background-color: #ccc;
+    }
+    .inner{
+      width:80%;
+      margin:0 auto;
+      padding:50px 0;
+      /* background-color: #ef6; */
+    }
+      /* html은 구획화를 해야 한다. 테두리, 여백 등을 동일화 */
+    .box{
+      /* margin:50px auto; */
+      background-color: #fbf;
+      margin-bottom:50px;
+    }
+    .box:last-child{
+      margin-bottom: 0;
+    }
+    /* 인라인 레벨은 넓이, 높이 지정할 수 없음. 또한 수직 여백도 정상적으로 적용 안됨. 
+    인라인 레벨은 크기를 지정할 수 없음. 인라인 레벨의 크기는 포함하는 내용이 결정.*/
+    .box span{
+      color:#f00;
+      font-weight: bold;
+      font-size: large;
+      background-color: #ef8;
+      padding:16px;
+      margin:8px;
+      width:200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="inner">
+
+      <div class="box box1">Lorem <span>가나다라 ipsum</span> dolor sit, amet consectetur adipisicing <span>elit</span>. Facere ipsum accusamus, culpa
+        temporibus autem atque voluptatem cupiditate dolores obcaecati numquam necessitatibus modi ducimus eius eos ut
+        ateum mollitia quos.</div>
+      <div class="box box2">Aut ipsa odio eaque repellat quidem praesentium fugiat quod et ipsum ad, nihil dolor
+        consequatur quo labore molestias fuga impedit delectus soluta amet minima asperiores illo magnam perferendis.
+        Ratione, fugiat.</div>
+      <div class="box box3">Aut ipsa odio eaque repellat quidem praesentium fugiat quod et ipsum ad, nihil dolor
+        consequatur quo labore molestias fuga impedit delectus soluta amet minima asperiores illo magnam perferendis.
+        Ratione, fugiat.</div>
+
+    </div>
+  </div>
+</body>
+
+</html>
