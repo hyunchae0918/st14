@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>말줄임표 만들기css</title>
+  <style>
+    *{margin:0; padding:0}
+    .box{
+      margin:50px;
+      padding:1em;
+      background-color: #ccc;
+    }
+    /* 여러줄 말줄임표 */
+    .box1{
+      /* white-space: normal; */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      width:80%;
+      height: 60px
+    }
+    /* 한줄 말줄임표 */
+    .box2{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    /* box 모델에서 넓이는 부모 컨텐츠 영역, 높이는 자식(컨텐츠)의 높이 */
+    .box3,
+    .box4,
+    .box5{
+      width:400px;
+      height: 40px;
+    }
+    /* overflow의 기본값은 visible */
+    .box3{overflow: visible;}
+    .box4{overflow: hidden;}
+    .box5{overflow: auto;}
+  </style>
+</head>
+<body>
+  <div class="box box1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo blanditiis quis, sunt, odio eius optio temporibus consequatur quidem animi earum, nemo nulla. Sit, sunt blanditiis. Enim molestias nemo recusandae. Reprehenderit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo blanditiis quis, sunt, odio eius optio temporibus consequatur quidem animi earum, nemo nulla. Sit, sunt blanditiis. Enim molestias nemo recusandae. Reprehenderit.</div>
+  <div class="box box2">Enim distinctio aliquam animi facilis, modi saepe voluptates, dolor odio aspernatur explicabo consectetur nihil ea. Dolorem necessitatibus id ab asperiores! Tenetur rerum quasi quidem cupiditate alias quibusdam ad at reprehenderit.</div>
+  <hr>
+  <!-- .box.box -->
+  <div class="box box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, fugit quasi. Expedita cupiditate, sunt consequatur laborum exercitationem rerum sint magnam atque doloremque voluptas excepturi, nisi voluptatum cumque nesciunt dolorem corrupti.</div>
+  <div class="box box4">Repudiandae nihil consequatur similique quae atque harum voluptatibus esse porro reprehenderit autem vero, fuga deserunt quam omnis assumenda numquam rerum aspernatur repellendus quaerat qui ducimus, at saepe. Ratione, sapiente debitis?</div>
+  <div class="box box5">Repudiandae nihil consequatur similique quae atque harum voluptatibus esse porro reprehenderit autem vero, fuga deserunt quam omnis assumenda numquam rerum aspernatur repellendus quaerat qui ducimus, at saepe. Ratione, sapiente debitis?</div>
+</body>
+</html>
