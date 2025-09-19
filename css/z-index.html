@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index</title>
+  <style>
+    *{margin: o;padding: 0;}
+    .container{
+      margin: 30px;
+      /* box3의 기준 요소가 됨 */
+      position: relative;
+      background-color: #ccc;
+    }
+    .box{
+      width: 200px; height: 200px; 
+    }
+    .box1{
+      position: static;
+      left: 50px; top: 50px;
+      z-index: 1000;
+      background-color: #ef6;
+    }
+    .box2{
+      /* 기준은 자신, 일반 흐름 o */
+      position: relative;
+      left: 50px; top: 50px;
+      z-index: 200;
+      background-color: #6ef;
+    }
+    .box3{
+      /* 기준은 가까운 조상 중 position: static 제외 선언된 요소,
+      일반 흐름에서 벗어남.
+      컨테이너가 기준이 되었음 */
+      position: absolute;
+      left: 60px; top: 70px;
+      z-index: 100;
+      background-color: #e6f;
+    }
+    .box4{
+      /* 기준은 브라우저, 일반 흐름에서 벗어남 */
+      position: fixed;
+      left:100px; top: 150px;
+      background-color: #275;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>
