@@ -16,27 +16,39 @@
     ul,ol,li{list-style: none;}
     .ec-base-product{
       width: auto;
+      /* background-color: #0f0;
+      border: 1px solid #080;
+      padding: 10px 0; */
     }
     .ec-base-product ul.prdList{
       width: auto;
-      background-color: #333;
-      /* display inline0block으로 인한 한칸 공백문자 없애기
+      /* background-color: #333; */
+      /* display inline-block으로 인한 한칸 공백문자 없애기
       -> 자식에게 font-size: 0,  line-height: 0; !!!!! */
       font-size: 0;
       line-height: 0;
+      /* 2. 상품 양옆으로 준 여백만큼: margin 0 -10px */
+      margin: 0 -10px;
     }
     .ec-base-product ul.prdList>li{
       display: inline-block;
       width: 33.333%;
-      background-color: #ccc;
-      border: 1px solid #f00;
+      /* background-color: #ccc;
+      border: 1px solid #f00; */
       box-sizing: border-box;
       /* ul(위의 부모)의 'font-size: 0,  line-height: 0;'를 다시 재설정!!!!! */
       font-size: 16px;
       line-height: 1.4;
     }
     .ec-base-product .prdList__item{
+      /* 1. 상품과 상품 사이의 여백을 위해 .prdList__item,
+         border 안쪽 여백을 이용해서 padding 지정 */
       padding: 0 10px;
+      /* 상품 설명이 사진 위에 겹쳐지게 하기 위해서 설정
+         (description의 기준 요소가 되기 위해서) */
+      position: relative;
+      /* 크기 밖에 있는 것은 보이지 말아라 */
+      overflow: hidden;
     }
 
     .ec-base-product .prdList__item .thumbnail{}
@@ -50,9 +62,37 @@
     }
 
     .ec-base-product .prdList__item .description{
-      background-color: rgba(148, 206, 40, 0.904);
+      /* em의 기준은 본인의 폰트 사이즈 */
+      box-sizing: border-box;
+      padding: 0.8em 1em;
+      
+      /* 사진 위에 설명을 겹치게 하기 위한 설정 */
+      /* absolute는 노멀 플로우에서 벗어남 ㅠ -> width 지정! */
+      position: absolute;
+      left: 10px; bottom: 0;
+      /* 기준 요소의 너비를 따르게 설정 */
+      width: calc(100%-20px);
+      background-color: rgba(225, 225, 225, 0.5);
+      /* 본인 수직 크기만큼 아래로 이동! */
+      transform: translateY(100%);
+      opacity: 0.5;
+      transition: all 0.3;
+
     }
-    .ec-base-product .prdList__item .description .name{}
+    .ec-base-product .prdList__item:hover .description{
+      /* left: 10px; bottom: 0; -> 동일한 값은 생략 */
+      /* 썸네일의 원위치에 있어라 */
+      transform: translateY(0);
+      /* css 수치값이 변하는 과정을 보여주는 transition */
+      opacity: 1;
+      transition: transform 1s;
+
+    }
+
+    .ec-base-product .prdList__item .description .name{
+      margin-bottom: 1em;
+      font-weight: bold;
+    }
     .ec-base-product .prdList__item .description .spec{}
     .ec-base-product .prdList__item .description .spec li{}
 
@@ -66,7 +106,7 @@
           <div class="thumbnail">
             <a href=""><img src="images/imgi_28_20250919160602324_6041.jpg" alt="상품명 1"></a>
           </div>
-          <div class="descrition">
+          <div class="description">
             <div class="name">상품명 1</div>
             <ul class="spec">
               <li>10,000원</li>
@@ -79,7 +119,7 @@
           <div class="thumbnail">
             <a href=""><img src="images/imgi_29_20250919160817340_2097.jpg" alt="상품명 2"></a>
           </div>
-          <div class="descrition">
+          <div class="description">
             <div class="name">상품명 2</div>
             <ul class="spec">
               <li>10,000원</li>
@@ -92,7 +132,7 @@
           <div class="thumbnail">
             <a href=""><img src="images/imgi_30_20250919160646130_3933.jpg" alt="상품명 3"></a>
           </div>
-          <div class="descrition">
+          <div class="description">
             <div class="name">상품명 3</div>
             <ul class="spec">
               <li>10,000원</li>
