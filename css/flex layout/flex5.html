@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex5 - flex와 item에게 margin auto값을 주었을 때</title>
+  <style>
+    *{margin: 0;padding: 0;box-sizing: border-box;}
+    body{margin-top: 50px;}
+    .container{
+      background-color: #ccc;
+      padding: 30px;
+    }
+    .item1{
+      width: 100px; min-height: 50px;
+      background-color: #6cf;}
+    .item2{
+      width: 400px; min-height: 30px;
+      background-color: #c6f;
+    }
+    .item3{
+      width: 200px; min-height: 30px;
+      background-color: #cf6;
+    }
+
+/* flex 설정! */
+    .container{
+      display: flex;
+      /* flex-direction: row; */
+      /* flex-wrap: nowrap; */
+      justify-content: start;    /* 주축 왼쪽 정렬 */
+      align-items: end;    /* 교차축 아래로 설정 */
+      gap:20px;
+    }
+    .item{
+      /* flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;  이는 모두 기본값!!*/
+    }
+    .item3{
+      margin-left: auto;  /* container의 여유 공간을 다 씀!!! */
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+  </div>
+</body>
+</html>

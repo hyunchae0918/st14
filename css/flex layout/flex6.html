@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex6 - flex와 position</title>
+  <style>
+    *{margin: 0;padding: 0;box-sizing: border-box;}
+    body{margin-top: 50px;}
+    .container{
+      background-color: #ccc;
+      padding: 30px;
+    }
+    .item1{
+      width: 100px; min-height: 50px;
+      background-color: #6cf;}
+    .item2{
+      width: 400px; min-height: 30px;
+      background-color: #c6f;
+    }
+    .item3{
+      width: 200px; min-height: 30px;
+      background-color: #cf6;
+    }
+
+/* flex 설정! */
+    .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative; /* 기준 요소(아이템3을 컨테이너 안으로) */
+    }
+    .item3{
+      /* 내가 원하는 곳에 배치할때!!!!!
+        높이를 인식하지 못함, 부모를 기준으로 위치 지정 */
+      position: absolute; 
+      right: 30px; bottom: 30px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+  </div>
+</body>
+</html>
