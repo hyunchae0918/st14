@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex7 - 갤러리 부모의 크기에 따라 유동적 크기(비율 유지)</title>
+  <title>flex7 - overlay 아래에서 위로</title>
   <style>
     *{margin: 0;padding: 0;box-sizing: border-box;}
     body{
@@ -21,6 +21,7 @@
     }
     .card-wrap{
       position: relative;
+      overflow: hidden;
     }
     .card-item{
     }
@@ -33,13 +34,58 @@
       height: auto;
       object-fit: cover;
     }
+/* overlay가 그림과 동일한 크기가 되고 싶을 때 */
     .card-item .overlay{
       position: absolute;
       left: 0; top: 0;
-      width: 100%;
+      width: 100%;  /* 기준요소의 너비의 컨텐츠 영역을 가져옴 */
+      height: 100%; /* 기준요소의 높이의 컨텐츠 영역을 가져옴 */
+      background-color: rgba(0, 0, 255, 0.6);
+
+      color: #fff;
+    }
+    .card-item .overlay > p{
+     padding: 0.2em 0.2em; 
     }
 
-/* flex */
+/* 오버레이에 후버를 했을때 위에서 아래로, 점점 반투명에서 불투명으로 */
+
+
+
+/* 오버레이 아이템 정렬(수직과 수평을 가운데) */
+    .card-item .overlay{
+      position: absolute;
+      left: 0; top: 0;
+    /* 기준 요소 밖으로 배치 / 아래에서 위로 움직이기 */
+      transform: translateY(100%); 
+      transition: all 0.2s;
+
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column; /* 방향이 아래로 */
+      justify-content: center;
+      align-items: center;
+      text-align: center; /* overlay 안에 후손 인라인 정렬 */
+    }
+    .card-wrap:hover .card-item .overlay{
+      transform: translateY(0);
+      
+    }
+
+/* flex 
+1. flex container를 지정: display flex 선언
+2. flex의 방향 지정: 
+3. (선택사항) 아이템의 총합의 크기가 컨데이너의 크기보다 클 때, 줄바꿈 여부 결정: flex-wrp
+4. 아이템과 아이템 사이에 여백 여부 결정: gap
+5. 아이템을 덩어리로 주축의 방향을 정렬: justify-content
+6. 아이템을 덩어리로 교차죽의 방향을 정렬: align-items
+7. (선택사항) 아이템이 줄바꿈을 했다면, 교차축의 정렬 여부 결정: align-content
+8. 아이템 자통 키우기: flex-grow (기본값:0)
+9. 아이템의 자동 수축: flex-shrink (기본값:1)
+10. 아이템 기본 크기 지정: flex-basis (기본값:auto)
+11. 아이템의 너비/높이 크기 지정  */
+
     .card-list{
       display: flex; /*flex container로 선언*/
       flex-wrap: wrap; /*item의 합이 flex container 크기보다 커질 경우 줄바꿈*/
@@ -104,7 +150,7 @@
           <div class="thubm"><img src="https://picsum.photos/400/300?random=2" alt=""></div>
           <div class="overlay">
             <p class="title">포트폴리오 제목</p>
-            <p class="desc">Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="desc">Lorem ipsum dolor.</p>
           </div>
         </div>
       </div>
