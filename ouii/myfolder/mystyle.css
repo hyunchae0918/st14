@@ -9,6 +9,9 @@ mystyle
   box-sizing: border-box;
   /* border: 1px solid #f00; */
 }
+.main_product_slide .ec-base-product .prdList{
+  flex-wrap: nowrap;
+}
 .ec-base-product .prdList >li{
   flex:none;
   margin: 0 0 70px 0;
@@ -132,4 +135,70 @@ grid3: nth-child(3n)
   box-sizing: border-box;
   padding: 0 16px;
 
+}
+/* section 관련 스타일 수정 */
+.section{border: 1px solid #f00;}
+.content-test{
+  border: 1px solid #00f;
+  min-height: 200px;
+  background-color: #ccc;
+}
+/* 
+1. section_full_content_center
+section 배경색
+content-test는 가운데 정렬
+mian_title이 cintent 너비 범위에서 left/center/right 정렬
+ */
+
+ .section{
+  /* section_full_content_center 관련 변수 선언 */
+  --section-bg:#fea;
+  --section-padding-top-bottom:40px;
+  --section-main-banner-padding:16px;
+ }
+
+ #contents > .section_full_content_center{
+  background-color: var(--section-bg);
+  width: 100%;
+  max-width: none;
+  padding-top: var(--section-padding-top-bottom);
+  padding-bottom: var(--section-padding-top-bottom);
+ }
+
+ #contents > .section_full_content_center .main_3dan_banner .main_banner_txt{
+  margin-top: 0;
+  padding: var(--section-main-banner-padding);
+  background-color: #fff;
+  box-sizing: border-box;
+ }
+
+@media (min-width: 1024px) {
+  #contents > .section_full_content_center > div{
+  max-width: 1230px;
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+/* 
+2. section_full_only_content
+   제목은 기존 섹션의 너비에 맞게 정렬이 되고, 
+   컨텐츠는 브라우저 전체를 사용 */
+
+  #contents > .section_full_only_content{
+  background-color: var(--section-bg);
+  width: 100%;
+  max-width: none;
+  padding-top: var(--section-padding-top-bottom);
+  padding-bottom: var(--section-padding-top-bottom);
+ }
+
+ @media (min-width: 1024px) {
+  #contents > .section_full_only_content > .main_title{
+  max-width: 1230px;
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  }
 }

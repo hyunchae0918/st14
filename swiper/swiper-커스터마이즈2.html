@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper-커스트마이즈3-내비아이콘변경</title>
+  <title>swiper 커스트마이즈2</title>
   <!-- 1 플러그인 css 
   우리 스타일보다 먼저 위치 
   -->
@@ -26,30 +26,6 @@
     height: auto;
     object-fit: cover;
     display: block;
-  }
-  .myname .swiper-button-next, 
-  .myname .swiper-button-prev {
-    width:24px; height: 24px;
-  }
-  .myswiper-nav i{
-    display: block;
-    width: 100%;
-    height:100%;
-    background: center/cover no-repeat;
-
-    border: 1px solid #000;
-  }
-  .myname .swiper-button-prev i.prev{
-    background-image: url(images/arrow_back.png);
-  }
-  .myname .swiper-button-next i.next{
-    background-image: url(images/arrow_forward.png);
-  }
- .myname .swiper-button-prev:hover i.prev{
-    background-image: url(images/arrow_back_hover.png);
-  }
-  .myname .swiper-button-next:hover i.next{
-    background-image: url(images/arrow_forward_hover.png);
   }
 </style>
 </head>
@@ -74,14 +50,8 @@
     <div class="swiper-pagination"></div>
     <!-- If we need navigation buttons -->
     <div class="myswiper-nav">
-      <div class="swiper-button-prev">
-        <!-- <img src="images/arrow_back.png" alt=""> -->
-        <i class="prev"></i>
-      </div>
-      <div class="swiper-button-next">
-        <i class="next"></i>
-        <!-- <img src="images/arrow_forward.png" alt=""> -->
-      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </div>
 
@@ -111,8 +81,6 @@
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-    // 내가지정하는 아이콘으로 사용
-    addIcons:false,
   },
 
   // And if we need scrollbar
