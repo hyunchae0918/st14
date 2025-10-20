@@ -84,43 +84,50 @@
   <div id="wrap">
     <!--@import(/layout/basic/header.html)-->
     <!--@import(/layout/basic/sidebar.html)-->
-    <div id="container" data-ez="layout-187eug1-1">
-      <div id="contents">
 
-        <!-- 여기에 콘텐츠 -->
-        <section class="section visual-section">
-          <div class="swiper visual_swiper">
+    <!--
+    ub-swiper-controls-bottom 클래스를 추가할 경우 swiper 스크립트의 
+    pagination을 type:fraction으로 변경 
+     -->
+
+    <div id="container" data-ez="layout-187eug1-1">
+      <div id="contents" class="ub-style">
+
+        <!-- 여기에 콘텐츠 / 
+         자바스크립트 없이 html만으로 <picture>를 사용하여 미디어쿼리 실현(pc용과 모바일용 대/소 사진 두개 필요) -->
+        <section class="section visual-section section_full">
+          <div class="swiper visual_swiper ub-swiper ub-swiper-controls-bottom">
             <div class="swiper-wrapper">
               <!-- Slides -->
               <div class="swiper-slide">
                 <picture>
-                  <source srcset="/ouii/myfolder/images/img1-m.png" media="(min-width:768px)">
-                  <img src="/ouii/myfolder/images/img1.png" alt="">
+                  <source srcset="/ouii/myfolder/images/img1.png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/img1-m.png" alt="">
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture>
-                  <source srcset="/ouii/myfolder/images/img2-m.png" media="(min-width:768px)">
-                  <img src="/ouii/myfolder/images/img2.png" alt="">
+                  <source srcset="/ouii/myfolder/images/img2.png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/img2-m.png" alt="">
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture>
-                  <source srcset="/ouii/myfolder/images/img3-m.png" media="(min-width:768px)">
-                  <img src="/ouii/myfolder/images/img3.png" alt="">
+                  <source srcset="/ouii/myfolder/images/img3.png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/img3-m.png" alt="">
                 </picture>
               </div>
   
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
+            <div class="ub-swiper-controls">
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
           </div>
         </section>
 
@@ -172,6 +179,11 @@
     const visual_swiper = new Swiper('.visual_swiper', {
       direction: 'horizontal',
       loop: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      // html에서 transform: scale()을 사용하면 안됨. 
+      // spaceBetween: 30,
+      // 무한 반복 
       // autoplay: {
       //   delay: 2500,
       //   disableOnInteraction: false,
@@ -180,7 +192,7 @@
       // If we need pagination
       pagination: {
         el: '.swiper-pagination',
-        // type : 'fraction',
+        type : 'fraction',
         // type : 'progressbar',
       },
 
