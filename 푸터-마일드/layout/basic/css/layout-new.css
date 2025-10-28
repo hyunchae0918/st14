@@ -132,40 +132,6 @@ a:hover {text-decoration:none;}
 .xans-layout-searchheader fieldset .autoDrop li a:hover,
 .xans-layout-searchheader fieldset .autoDrop li.selected a { text-decoration:none; color:#fff; background:#a1a4ae; }
 
-/* 하단 */
-.footer_margin {margin-top:100px;}
-
-
-/* 하단 로고 */
-
-
-/* 하단 정보 */
-.bt_top {position:relative;display:flex;justify-content:space-between;}
-.bt_top > ul {display:flex;}
-.bt_top > ul > li {margin-left:90px; font-size: 14px; font-weight:600; letter-spacing: 0.05em;color: #333; line-height: 1.7;}
-.bt_top > ul > li > ul {margin-top:10px;display:block;}
-.bt_top > ul > li > ul li,
-.bt_top > ul > li > ul li a {font-size:12px;letter-spacing:0.025em;color:#a4a4a4;font-weight:300;}
-.bt_top ul li.bt_company {margin:0;font-size: 14px; font-weight:600; letter-spacing: 0.05em;color: #333; line-height: 1.7;position:relative;}
-.bt_top ul li.bt_company .bt_info_list {display:flex;flex-wrap:wrap;justify-content:flex-start;max-width:500px;margin-top:10px;}
-.bt_top ul li.bt_company .bt_info_list > li {margin:0 10px 0 0;font-size:12px;letter-spacing:0.025em;color:#a4a4a4;font-weight:300;}
-.bt_top ul li.bt_company .bt_info_list > li span:first-child {font-weight:600;}
-.bt_top li.bt_tel {font-size:12px;font-weight:400;}
-.bt_top li.bt_tel > strong {font-weight:600;}
-.bt_top li.bt_cc .tablet_fold > li {margin-bottom:10px;}
-.bt_top li.bt_mail > strong,
-.bt_top li.bt_time > strong {font-weight:600;display:block;}
-.bt_top li.bt_bank {margin-bottom:10px;}
-.bt_top li.bt_bank .bt_title_sub > strong {font-weight:600;}
-.bt_top .pdr10 {padding-right:10px;}
-.bt_top li.bt_sns > div {margin-top:10px;}
-.bt_top li.bt_sns > div a {display:block;font-size:12px;letter-spacing:0.025em;color:#a4a4a4;font-weight:300;}
-
-
-/* 하단 메뉴 */
-
-
-/* 하단 에스크로 */
 
 
 /* 상품 더보기 */
@@ -243,34 +209,7 @@ a:hover {text-decoration:none;}
 	#header .inner .top_nav_box .top_mypage a.eNavFold .icon.icoNav:before {width:24px;top:10px;}
 	#header.fixed {-webkist-transform:translateY(0px);-ms-transform:translateY(0px);transform:translateY(0px);}
 
-	/* 하단 */
-	.footer_margin {margin-top:50px;}
-
-
-	/* 하단 로고 */
 	
-
-	/* 하단 정보 */
-	
-	.bt_top {width:100%;flex-direction:column;}
-	.bt_top > ul {flex-direction:column;}
-	.bt_top > ul > li {display:flex !important;flex-wrap:wrap;justify-content:space-between;margin-left:0;margin-bottom:20px;position:relative;}
-	.bt_top > ul > li .bt_bank {margin-top: 0;}
-	.bt_top > ul > li.bt_company {order:1;margin:0 0 20px;}
-	.bt_top > ul > li.bt_cc {order:2;}
-	.bt_top > ul > li.bt_bank {order:3;margin-bottom:20px;}
-	.bt_top > ul > li.bt_sns {order:4;line-height:1.7;}
-	.bt_top > ul > li.bt_sns a {display:inline-block;margin:0 20px 10px 0;}
-	.bt_top ul > li .icon[class*="icoPlus"] {display:block;width:12px;height:22px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;font-size:0px;color:#333;position:relative;}
-	.bt_top ul > li .icon[class*="icoPlus"]:before {content:'';position:absolute;left:1px;top:50%;width:11px;height:1px;background:#333;}
-	.bt_top ul > li .icon[class*="icoPlus"]:after {content:'';position:absolute;left:50%;top:50%;width:1px;height:11px;margin:-5px 0 0 0;background:#333;}
-	.bt_top ul > li .icon[class*="icoPlus"].open:after{display: none;}
-	.bt_top ul > li .bt_dummy {position:absolute;width:100%;height:24px;top:0;left:0;right:0;bottom:0;cursor:pointer;}
-	.bt_top ul li.bt_company {display:flex;flex-wrap:wrap;justify-content:space-between;margin-left:0;margin-bottom:20px;position:relative;}
-
-
-	/* 하단 기타 */
-
 
 	/* 상단검색 레이어 */
 	#header.fixed .inner .xans-layout-searchheader,
