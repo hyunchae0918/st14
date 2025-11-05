@@ -862,3 +862,32 @@ tab-vertical.tab-slides
 .tab-slides .ec-base-product .prdList.swiper-wrapper{
   flex-wrap: nowrap;
 } 
+
+
+/* 버튼색 변경 */
+
+[class^='btnSubmit'], a[class^='btnSubmit'] {
+    background: #410057;
+    color: #fff;
+}
+
+/* 옵션 컬러칩 변경 */
+@media(min-width:1024.002px){
+  .xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li {
+    border-radius: 0%;
+    margin-right: 8px;
+    padding: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #efefef;
+}
+  .xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li.ec-product-selected{
+    border: 1px solid #000;
+  }
+  .xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li a {
+    width: 30px;
+    height: 30px;
+    
+}
+}
+
